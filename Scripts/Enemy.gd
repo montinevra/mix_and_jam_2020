@@ -8,10 +8,8 @@ const BULLET_SPAWN_POS = Vector2.DOWN * 12
 onready var c_shoot_timer = $ShootTimer
 
 
-
 #private:
 func _shoot():
-	print("shooting!")
 	var bullet = BULLET_SCENE.instance()
 
 	bullet.position = position + BULLET_SPAWN_POS
