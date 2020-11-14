@@ -11,6 +11,7 @@ var m_inputs = {
 	"player_move_up": Vector2.UP,
 	"player_move_down": Vector2.DOWN,
 }
+onready var m_fire_cd = $FireCD
 
 
 func _physics_process(_delta):
@@ -26,8 +27,9 @@ func _update_velocity() -> void:
 
 
 func _unhandled_input(event):
-	if event.is_action_pressed("fire"):
+	if event.is_action_pressed("fire") and !m_fire_cd.time_left:
 		_fire()
+		m_fire_cd.start()
 
 
 #private:
