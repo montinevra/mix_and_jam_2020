@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Sprites/core.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/ph_core.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Enemy.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/Gobo Mark III Pixel.png" type="Texture" id=4]
 

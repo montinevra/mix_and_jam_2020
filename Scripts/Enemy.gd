@@ -6,6 +6,7 @@ const SPEED = 100
 const SHOOT_CD = 1
 const PLAYFIELD_EDGE = 20
 const BULLET_SCENE = preload("res://scenes/EnemyBullet.tscn")
+var m_core_color = 0xFFFFFF
 var m_state = State.ALIVE
 var m_velocity = Vector2.RIGHT * SPEED
 var window_width = ProjectSettings.get_setting("display/window/size/width")
@@ -34,7 +35,6 @@ func on_hit() -> void:
 	c_core.show()
 	c_collider.disabled = true
 	c_shoot_timer.stop()
-	print("jhit!")
 
 
 #private:
