@@ -7,7 +7,7 @@ export var enemy_count: int = 8
 var m_core_colors = [Color.red, Color.blue, Color.green, Color.yellow, Color.red, Color.blue, Color.green, Color.yellow]
 onready var c_player_start = $PlayerStart
 onready var c_enemy_start = $EnemyStart
-onready var c_enemy_grid = $EnemyGrid
+onready var c_enemy_grid = $Path2D/EnemyGrid
 
 
 func _ready():
@@ -25,7 +25,7 @@ func _start_game():
 	m_core_colors.shuffle()
 	for i in c_enemy_grid.get_children():
 		var new_enemy = enemy.duplicate()
-		add_child(new_enemy)
+		c_enemy_grid.add_child(new_enemy)
 		new_enemy.position = i.position
 		new_enemy.set_core_color(m_core_colors[x])
 		x += 1
