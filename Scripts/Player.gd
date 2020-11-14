@@ -32,6 +32,11 @@ func _unhandled_input(event):
 		m_fire_cd.start()
 
 
+#public:
+func on_hit() -> void:
+	queue_free()
+
+
 #private:
 func _fire():
 	var bullet = BULLET_SCENE.instance()
