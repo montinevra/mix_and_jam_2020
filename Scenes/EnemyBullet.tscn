@@ -7,9 +7,10 @@
 radius = 2.0
 height = 2.0
 
-[node name="EnemyBullet" type="KinematicBody2D"]
+[node name="EnemyBullet" type="RigidBody2D"]
 collision_layer = 2
 script = ExtResource( 1 )
+m_speed = -300.0
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
