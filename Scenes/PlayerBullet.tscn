@@ -7,7 +7,7 @@
 radius = 2.0
 height = 2.0
 
-[node name="PlayerBullet" type="RigidBody2D"]
+[node name="PlayerBullet" type="KinematicBody2D"]
 collision_layer = 2
 script = ExtResource( 2 )
 m_speed = 400.0

@@ -12,8 +12,9 @@ onready var c_bullet_spawn = $BulletSpawn
 
 
 func _physics_process(delta):
+	var collision
 # warning-ignore:return_value_discarded
-	move_and_collide(m_velocity * delta)
+	collision = move_and_collide(m_velocity * delta)
 	if position.x > window_width - PLAYFIELD_EDGE:
 		m_velocity = Vector2.LEFT * SPEED
 	elif position.x < PLAYFIELD_EDGE:
