@@ -8,6 +8,7 @@ onready var c_enemy_start = $EnemyStart
 
 
 func _ready():
+	randomize()
 	_start_game()
 
 
@@ -19,4 +20,4 @@ func _start_game():
 	enemy.position = c_enemy_start.position
 	add_child(player)
 	add_child(enemy)
-
+	enemy.set_core_color(Color(randf(), randf(), randf()))
