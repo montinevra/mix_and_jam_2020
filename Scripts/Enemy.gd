@@ -11,6 +11,7 @@ var m_velocity = Vector2.RIGHT * SPEED
 var window_width = ProjectSettings.get_setting("display/window/size/width")
 onready var c_body = $Body
 onready var c_core = $Core
+onready var c_collider = $CollisionPolygon2D
 onready var c_shoot_timer = $ShootTimer
 onready var c_bullet_spawn = $BulletSpawn
 
@@ -31,6 +32,7 @@ func on_hit() -> void:
 	m_state = State.CORE
 	c_body.hide()
 	c_core.show()
+	c_collider.disabled = true
 	c_shoot_timer.stop()
 	print("jhit!")
 
