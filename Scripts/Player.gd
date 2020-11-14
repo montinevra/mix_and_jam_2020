@@ -2,8 +2,7 @@ extends KinematicBody2D
 
 
 const SPEED = 200
-const BULLET_SCENE = preload("res://scenes/Bullet.tscn")
-const BULLET_SPAWN_POS = Vector2.UP * 12
+const BULLET_SCENE = preload("res://scenes/PlayerBullet.tscn")
 var m_velocity = Vector2(0, 0)
 var m_inputs = {
 	"player_move_right": Vector2.RIGHT,
@@ -12,6 +11,7 @@ var m_inputs = {
 	"player_move_down": Vector2.DOWN,
 }
 onready var m_fire_cd = $FireCD
+onready var c_bullet_spawn = $BulletSpawn
 
 
 func _physics_process(_delta):
@@ -36,5 +36,5 @@ func _unhandled_input(event):
 func _fire():
 	var bullet = BULLET_SCENE.instance()
 
-	bullet.position = position + BULLET_SPAWN_POS
+	bullet.position = c_bullet_spawn.global_position
 	get_parent().add_child(bullet)
