@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Player Pixel ShipGreyscale.png-bd53b9684cdd6e87121e6b8aa1131431.stex"
+path="res://.import/Player Pixel Ship.png-b11f22eed40450befeec69ca56f47ce9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player Pixel ShipGreyscale.png"
-dest_files=[ "res://.import/Player Pixel ShipGreyscale.png-bd53b9684cdd6e87121e6b8aa1131431.stex" ]
+source_file="res://Sprites/Player Pixel Ship.png"
+dest_files=[ "res://.import/Player Pixel Ship.png-b11f22eed40450befeec69ca56f47ce9.stex" ]
 
 [params]
 

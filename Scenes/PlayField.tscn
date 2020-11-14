@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/PlayField.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/EnemyGrid.gd" type="Script" id=3]
 
 [sub_resource type="Curve2D" id=1]
@@ -18,15 +17,8 @@ position = Vector2( 235.348, 742.884 )
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource( 1 )
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-rotate = false
-script = ExtResource( 3 )
-
-[node name="icon" type="Sprite" parent="Path2D/PathFollow2D"]
-position = Vector2( 33.0188, 253.085 )
-texture = ExtResource( 2 )
-
 [node name="EnemyGrid" type="PathFollow2D" parent="Path2D"]
+position = Vector2( 1.50074, 1.23854 )
 rotate = false
 script = ExtResource( 3 )
 
