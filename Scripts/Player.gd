@@ -11,7 +11,7 @@ var m_inputs = {
 }
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	_update_velocity()
 	m_velocity = move_and_slide(m_velocity)
 
