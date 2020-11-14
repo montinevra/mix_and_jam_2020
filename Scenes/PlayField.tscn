@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/PlayField.gd" type="Script" id=1]
+
+[node name="PlayField" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="PlayerStart" type="Position2D" parent="."]
+position = Vector2( 235.348, 742.884 )
+
+[node name="EnemyStart" type="Position2D" parent="."]
+position = Vector2( 64.7334, 62.6721 )
