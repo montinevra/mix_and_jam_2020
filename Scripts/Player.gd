@@ -2,6 +2,8 @@ extends KinematicBody2D
 
 
 const SPEED = 200
+const BULLET_SCENE = preload("res://scenes/Bullet.tscn")
+const BULLET_SPAWN_POS = Vector2.UP * 12
 var m_velocity = Vector2(0, 0)
 var m_inputs = {
 	"player_move_right": Vector2.RIGHT,
@@ -21,3 +23,16 @@ func _update_velocity() -> void:
 	for dir in m_inputs.keys():
 		if Input.is_action_pressed(dir):
 			m_velocity += m_inputs[dir] * SPEED
+
+
+func _unhandled_input(event):
+	if event.is_action_pressed("fire"):
+		_fire()
+
+
+#private:
+func _fire():
+	var bullet = BULLET_SCENE.instance()
+
+	bullet.position = position + BULLET_SPAWN_POS
+	get_parent().add_child(bullet)
