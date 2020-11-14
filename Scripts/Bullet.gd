@@ -24,7 +24,4 @@ func _physics_process(delta):
 
 #private:
 func _collide(t_collision) -> void:
-	print("colision")
 	queue_free()
-	pass
-	
