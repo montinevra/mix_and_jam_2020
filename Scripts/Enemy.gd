@@ -39,6 +39,7 @@ func on_hit() -> void:
 	c_core.show()
 	c_collider.disabled = true
 	c_shoot_timer.stop()
+	Events.emit_signal("sig_enemy_hit", self)
 
 
 func set_core_color(t_color: Color):

@@ -13,6 +13,7 @@ onready var c_enemy_grid = $Path2D/EnemyGrid
 func _ready():
 	randomize()
 	Events.connect("sig_bullet_spawned", self, "_on_bullet_spawned")
+	Events.connect("sig_enemy_hit", self, "_on_enemy_hit")
 	_start_game()
 
 
@@ -34,7 +35,10 @@ func _start_game():
 
 #private:
 func _on_bullet_spawned(t_bullet):
-	print("bulet spawn")
 	t_bullet.get_parent().remove_child(t_bullet)
 	add_child(t_bullet)
-	pass
+
+
+func _on_enemy_hit(t_enemy):
+	t_enemy.get_parent().remove_child(t_enemy)
+	add_child(t_enemy)
