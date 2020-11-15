@@ -6,4 +6,4 @@ func _ready():
 
 
 func _on_PlayerExplosion_animation_finished():
-	print("u lose")
+	get_tree().change_scene("res://Scenes/Defeat.tscn")

@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Backgrounds/DefeatScreen.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Defeat.gd" type="Script" id=2]
+[ext_resource path="res://Sounds/time_stop.wav" type="AudioStream" id=3]
+
+[node name="Howtoplayscreen" type="Sprite"]
+texture = ExtResource( 1 )
+centered = false
+script = ExtResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
