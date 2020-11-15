@@ -102,19 +102,20 @@ anims/Twinkle = SubResource( 1 )
 position = Vector2( 188.043, 123.551 )
 frames = SubResource( 7 )
 animation = "Twinkle"
+frame = 3
 playing = true
 
 [node name="MediumStar" type="AnimatedSprite" parent="Starfield"]
 position = Vector2( 64.1294, 139.027 )
 frames = SubResource( 13 )
 animation = "Twinkle"
+frame = 3
 playing = true
 
 [node name="TinyStar" type="AnimatedSprite" parent="Starfield"]
 position = Vector2( 170.059, 47.8321 )
 frames = SubResource( 19 )
 animation = "Twinkle"
-frame = 2
 playing = true
 
 [node name="PlayField" parent="." instance=ExtResource( 2 )]
