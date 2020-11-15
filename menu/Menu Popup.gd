@@ -58,14 +58,13 @@ func _input(event):
 			else:
 				selected_menu = 2
 			change_menu_color()
+		elif Input.is_action_just_pressed("ui_cancel"):
+			_resume()
 		elif Input.is_action_just_pressed("fire"):
 			match selected_menu:
 				0:
 					# Resume game
-					if not already_paused:
-						get_tree().paused = false
-#					player.set_process_input(true)
-					hide()
+					_resume()
 				1:
 					# Restart game
 					get_tree().change_scene("res://Scenes/Main.tscn")
@@ -73,3 +72,9 @@ func _input(event):
 				2:
 					# Quit game
 					get_tree().quit()
+
+
+func _resume():
+	if not already_paused:
+		get_tree().paused = false
+		hide()
