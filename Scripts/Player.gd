@@ -4,6 +4,7 @@ extends KinematicBody2D
 const SPEED = 200
 const BULLET_SCENE = preload("res://scenes/PlayerBullet.tscn")
 const EXPLOSION_SCENE = preload("res://Sprites/Animated/PlayerExplosion.tscn")
+const DEATH_SOUND = preload("res://Sounds/PlayerDeathSound.tscn")
 var m_velocity = Vector2(0, 0)
 var m_inputs = {
 	"player_move_right": Vector2.RIGHT,
@@ -36,8 +37,10 @@ func _unhandled_input(event):
 #public:
 func on_hit() -> void:
 	var explosion = EXPLOSION_SCENE.instance()
+	var death = DEATH_SOUND.instance()
 	
 	get_parent().add_child(explosion)
+	get_parent().add_child(death)
 	explosion.set_position(get_position())
 	queue_free()
 
