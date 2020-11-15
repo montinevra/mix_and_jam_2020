@@ -2,7 +2,8 @@ extends KinematicBody2D
 class_name Enemy
 
 
-enum State {ALIVE, CORE}
+enum State {ALIVE, CORE, UNEXPLODING}
+const DEBUG = false
 const SPEED = 100
 const SHOOT_CD = 1
 const PLAYFIELD_EDGE = 20
@@ -16,9 +17,13 @@ onready var c_core: Sprite = $Core
 onready var c_collider: CollisionPolygon2D = $CollisionPolygon2D
 onready var c_shoot_timer: Timer = $ShootTimer
 onready var c_bullet_spawn: Position2D = $BulletSpawn
+onready var c_core_explosion: AnimatedSprite = $CoreExplosion
+onready var c_core_unexplosion: AnimatedSprite = $CoreUnexplosion
 
 
 func _ready():
+# warning-ignore:return_value_discarded
+	Events.connect("sig_core_exploded", self, "_on_core_exploded")
 # warning-ignore:return_value_discarded
 	Events.connect("sig_core_matched", self, "_on_core_matched")
 # warning-ignore:return_value_discarded
@@ -28,6 +33,8 @@ func _ready():
 
 
 func _physics_process(delta):
+	if DEBUG:
+		return
 	var collision
 	if m_state == State.ALIVE:
 		collision = move_and_collide(m_velocity * delta)
@@ -41,21 +48,38 @@ func _physics_process(delta):
 
 #public:
 func on_hit() -> void:
+	if m_state == State.UNEXPLODING:
+		return
 	m_state = State.CORE
 	c_body.hide()
 	c_core.show()
 	c_collider.disabled = true
 	c_shoot_timer.stop()
-	Events.emit_signal("sig_enemy_hit", self)
-	Events.emit_signal("sig_core_exposed", c_core.get_modulate())
+	c_core_explosion.set_frame(0)
+	c_core_explosion.show()
+	c_core_explosion.play()
+#	Events.emit_signal("sig_enemy_hit", self)
+#	Events.emit_signal("sig_core_exposed", c_core.get_modulate())
 
 
 func set_core_color(t_color: Color):
 	c_core.set_modulate(t_color)
 
 
+func get_core_color():
+	return c_core.get_modulate()
+
+
+func is_core_exposed():
+	if m_state == State.CORE:
+		return true
+	return false
+
+
 #private:
 func _shoot():
+	if DEBUG:
+		return
 	var bullet = BULLET_SCENE.instance()
 
 	bullet.position = c_bullet_spawn.global_position
@@ -68,6 +92,11 @@ func _on_ShootTimer_timeout():
 	c_shoot_timer.set_wait_time(SHOOT_CD + randf())
 
 
+func _on_core_exploded():
+	if m_state == State.CORE:
+		Events.emit_signal("sig_core_exposed", c_core.get_modulate())
+
+
 func _on_core_matched(t_color):
 	if c_core.get_modulate() == t_color:
 		var explosion = EXPLOSION_SCENE.instance()
@@ -77,6 +106,21 @@ func _on_core_matched(t_color):
 
 
 func _on_core_unmatched():
+	if m_state == State.ALIVE:
+		return
+	m_state = State.UNEXPLODING
+	c_core_unexplosion.set_frame(0)
+	c_core_unexplosion.show()
+	c_core_unexplosion.play()
+
+
+func _on_CoreExplosion_animation_finished():
+	c_core_explosion.hide()
+	Events.emit_signal("sig_core_exposed", c_core.get_modulate())
+
+
+func _on_CoreUnexplosion_animation_finished():
+	c_core_unexplosion.hide()
 	c_core.hide()
 	c_body.show()
 	m_state = State.ALIVE
