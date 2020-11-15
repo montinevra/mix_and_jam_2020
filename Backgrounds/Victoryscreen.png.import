@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Victoryscreen.png-611d8e25f2d62a519d22419c21b2ac33.stex"
+path="res://.import/Victoryscreen.png-800028a775e7a6e184f87106870ddf73.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Victoryscreen.png"
-dest_files=[ "res://.import/Victoryscreen.png-611d8e25f2d62a519d22419c21b2ac33.stex" ]
+source_file="res://Backgrounds/Victoryscreen.png"
+dest_files=[ "res://.import/Victoryscreen.png-800028a775e7a6e184f87106870ddf73.stex" ]
 
 [params]
 

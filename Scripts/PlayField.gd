@@ -87,4 +87,4 @@ func _on_enemy_destroyed():
 	for i in m_enemy_list:
 		if i:
 			return
-	print("you win")
+	get_tree().change_scene("res://Scenes/Victory.tscn")
