@@ -4,20 +4,22 @@ extends Popup
 var player
 var already_paused
 var selected_menu
+var white = Color(1,1,1)
+var grayout = Color(.5,.5,.5)
 
 
 func change_menu_color():
-	$Resume.color = Color.white
-	$Restart.color = Color.white
-	$Quit.color = Color.white
+	$Resume.modulate = Color(white)
+	$Restart.modulate = Color(white)
+	$Quit.modulate = Color(white)
 	
 	match selected_menu:
 		0:
-			$Resume.color = Color.gray
+			$Resume.modulate = grayout
 		1:
-			$Restart.color = Color.gray
+			$Restart.modulate = grayout
 		2:
-			$Quit.color = Color.gray
+			$Quit.modulate = grayout
 
 func _input(event):
 	if not visible:
@@ -53,7 +55,8 @@ func _input(event):
 					get_tree().paused = false
 				2:
 					# Quit game
-					get_tree().quit()
+					get_tree().change_scene("res://Scenes/MainMenu.tscn")
+					get_tree().paused = false
 
 
 func _resume():
