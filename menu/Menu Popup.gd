@@ -1,26 +1,9 @@
 extends Popup
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
 var player
-
-
 var already_paused
 var selected_menu
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	player = get_node("/root/Root/Player")
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 
 
 func change_menu_color():
@@ -46,7 +29,6 @@ func _input(event):
 			selected_menu = 0
 			change_menu_color()
 			# Show popup
-#			player.set_process_input(false)
 			popup()
 	else:
 		if Input.is_action_just_pressed("ui_down"):
