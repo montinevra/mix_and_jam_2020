@@ -58,8 +58,7 @@ func on_hit() -> void:
 	c_core_explosion.set_frame(0)
 	c_core_explosion.show()
 	c_core_explosion.play()
-#	Events.emit_signal("sig_enemy_hit", self)
-#	Events.emit_signal("sig_core_exposed", c_core.get_modulate())
+	$CoreExplosionSound.play()
 
 
 func set_core_color(t_color: Color):
@@ -113,7 +112,8 @@ func _on_core_unmatched():
 	c_core_unexplosion.set_frame(0)
 	c_core_unexplosion.show()
 	c_core_unexplosion.play()
-
+	$CoreUnexplosionSound.play()
+	
 
 func _on_CoreExplosion_animation_finished():
 	c_core_explosion.hide()
