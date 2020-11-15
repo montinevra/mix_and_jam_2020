@@ -14,4 +14,5 @@ signal sig_core_exposed(t_color)
 signal sig_core_matched(t_color)
 # warning-ignore:unused_signal
 signal sig_core_unmatched
+# warning-ignore:unused_signal
 signal sig_enemy_destroyed
