@@ -38,7 +38,7 @@ func _input(event):
 			selected_menu = 3
 		change_menu_color()
 	elif Input.is_action_just_pressed("ui_cancel"):
-		_resume()
+		get_tree().quit()
 	elif Input.is_action_just_pressed("fire") or Input.is_action_just_pressed("ui_accept"):
 		match selected_menu:
 			0:
