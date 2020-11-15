@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/PlayField.gd" type="Script" id=1]
+[ext_resource path="res://Space Field I.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/EnemyGrid.gd" type="Script" id=3]
 
 [sub_resource type="Curve2D" id=1]
@@ -45,3 +46,8 @@ position = Vector2( 435.549, 52.65 )
 
 [node name="EnemyStart9" type="Position2D" parent="Path2D/EnemyGrid"]
 position = Vector2( 502.958, 146.089 )
+
+[node name="Space Field I" type="Sprite" parent="."]
+position = Vector2( 1.50074, 1.23854 )
+texture = ExtResource( 2 )
+centered = false
