@@ -50,7 +50,7 @@ func _input(event):
 				get_tree().paused = false
 			2:
 				# Credits Page
-				get_tree().change_scene("res://Scenes/.tscn")
+				get_tree().change_scene("res://Scenes/Credits.tscn")
 			3:
 				# Quit game
 				get_tree().quit()

@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Fonts/CreditsFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Backgrounds/Starscreen Color.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Victory.gd" type="Script" id=3]
+
+[node name="Credits" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Starscreen Color" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Label" type="Label" parent="."]
+margin_left = 59.666
+margin_top = 152.792
+margin_right = 584.666
+margin_bottom = 348.792
+custom_fonts/font = ExtResource( 1 )
+text = "Programming, Design - Paolo Van Erp
+Art - Brian Thompson
+UI, Programming - Travis Neal"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
