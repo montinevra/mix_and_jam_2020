@@ -24,17 +24,17 @@ func _ready():
 
 
 func change_menu_color():
-	$Resume.color = Color.gray
-	$Restart.color = Color.gray
-	$Quit.color = Color.gray
+	$Resume.color = Color.white
+	$Restart.color = Color.white
+	$Quit.color = Color.white
 	
 	match selected_menu:
 		0:
-			$Resume.color = Color.greenyellow
+			$Resume.color = Color.gray
 		1:
-			$Restart.color = Color.greenyellow
+			$Restart.color = Color.gray
 		2:
-			$Quit.color = Color.greenyellow
+			$Quit.color = Color.gray
 
 func _input(event):
 	if not visible:
