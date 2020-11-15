@@ -8,13 +8,13 @@
 [ext_resource path="res://Sprites/Menu HowToPlay.png" type="Texture" id=6]
 [ext_resource path="res://Shaders/normal.shader" type="Shader" id=7]
 
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 7 )
+
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 7 )
 
 [sub_resource type="ShaderMaterial" id=3]
-shader = ExtResource( 7 )
-
-[sub_resource type="ShaderMaterial" id=4]
 shader = ExtResource( 7 )
 
 [node name="Main Menu" type="Control"]
@@ -45,7 +45,7 @@ __meta__ = {
 }
 
 [node name="start" type="TextureRect" parent="."]
-material = SubResource( 2 )
+material = SubResource( 1 )
 margin_left = 20.0
 margin_top = 555.0
 margin_right = 321.0
@@ -56,7 +56,7 @@ __meta__ = {
 }
 
 [node name="credits" type="TextureRect" parent="."]
-material = SubResource( 3 )
+material = SubResource( 2 )
 margin_left = 20.0
 margin_top = 630.0
 margin_right = 321.0
@@ -67,7 +67,7 @@ __meta__ = {
 }
 
 [node name="quit" type="TextureRect" parent="."]
-material = SubResource( 4 )
+material = SubResource( 3 )
 margin_left = 20.0
 margin_top = 710.0
 margin_right = 321.0
