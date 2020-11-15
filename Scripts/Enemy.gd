@@ -31,7 +31,6 @@ func _physics_process(delta):
 	if m_state == State.ALIVE:
 		collision = move_and_collide(m_velocity * delta)
 		if collision:
-			print(collision.get_collider())
 			m_velocity *= -1
 		if position.x > window_width - PLAYFIELD_EDGE:
 			m_velocity = Vector2.LEFT * SPEED

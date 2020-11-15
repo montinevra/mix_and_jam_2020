@@ -7,6 +7,4 @@ func _collide(t_collision) -> void:
 	
 	if collider.name == "Player":
 		collider.on_hit()
-#	print(t_collision.collider)
 	._collide(t_collision)
-

@@ -29,7 +29,6 @@ func _start_game():
 	m_core_colors.shuffle()
 	for i in c_enemy_grid.get_children():
 		var new_enemy = enemy.duplicate()
-#		c_enemy_grid.add_child(new_enemy)
 		add_child(new_enemy)
 		new_enemy.position = i.position
 		new_enemy.set_core_color(m_core_colors[x])
@@ -53,7 +52,6 @@ func _on_enemy_hit(t_enemy):
 func _on_core_exposed(t_color):
 	if !m_last_core:
 		m_last_core = t_color
-		print("color = ", t_color)
 	elif m_last_core == t_color:
 #	if m_last_core and m_last_core == t_color:
 		Events.emit_signal("sig_core_matched", t_color)
