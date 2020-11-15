@@ -42,7 +42,7 @@ func _input(event):
 			change_menu_color()
 		elif Input.is_action_just_pressed("ui_cancel"):
 			_resume()
-		elif Input.is_action_just_pressed("fire"):
+		elif Input.is_action_just_pressed("fire") or Input.is_action_just_pressed("ui_accept"):
 			match selected_menu:
 				0:
 					# Resume game
