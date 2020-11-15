@@ -27,15 +27,17 @@ func _ready():
 
 
 func _physics_process(delta):
-#	var collision
-## warning-ignore:return_value_discarded
-#	if m_state == State.ALIVE:
-#		collision = move_and_collide(m_velocity * delta)
-#		if position.x > window_width - PLAYFIELD_EDGE:
-#			m_velocity = Vector2.LEFT * SPEED
-#		elif position.x < PLAYFIELD_EDGE:
-#			m_velocity = Vector2.RIGHT * SPEED
-	pass
+	var collision
+	if m_state == State.ALIVE:
+		collision = move_and_collide(m_velocity * delta)
+		if collision:
+			print(collision.get_collider())
+			m_velocity *= -1
+		if position.x > window_width - PLAYFIELD_EDGE:
+			m_velocity = Vector2.LEFT * SPEED
+		elif position.x < PLAYFIELD_EDGE:
+			m_velocity = Vector2.RIGHT * SPEED
+
 
 #public:
 func on_hit() -> void:
