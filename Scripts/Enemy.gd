@@ -18,9 +18,12 @@ onready var c_bullet_spawn: Position2D = $BulletSpawn
 
 
 func _ready():
+# warning-ignore:return_value_discarded
 	Events.connect("sig_core_matched", self, "_on_core_matched")
+# warning-ignore:return_value_discarded
 	Events.connect("sig_core_unmatched", self, "_on_core_unmatched")
 	c_shoot_timer.set_wait_time(SHOOT_CD + randf())
+	c_shoot_timer.start()
 
 
 func _physics_process(delta):
@@ -75,7 +78,3 @@ func _on_core_unmatched():
 	c_collider.disabled = false
 	c_shoot_timer.start()
 	c_shoot_timer.set_wait_time(SHOOT_CD + randf())
-	
-#	if c_core.get_modulate() == t_color:
-#		queue_free()
-	
