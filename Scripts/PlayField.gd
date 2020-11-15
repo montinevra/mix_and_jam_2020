@@ -6,12 +6,13 @@ const ENEMY_SCENE = preload("res://scenes/Enemy.tscn")
 export var enemy_count: int = 8
 var m_core_colors = [Color.red, Color.blue, Color.green, Color.yellow, Color.red, Color.blue, Color.green, Color.yellow]
 onready var c_player_start = $PlayerStart
-onready var c_enemy_start = $EnemyStart
+#onready var c_enemy_start = $EnemyStart
 onready var c_enemy_grid = $Path2D/EnemyGrid
 
 
 func _ready():
 	randomize()
+	Events.connect("sig_bullet_spawned", self, "_on_bullet_spawned")
 	_start_game()
 
 
@@ -29,3 +30,11 @@ func _start_game():
 		new_enemy.position = i.position
 		new_enemy.set_core_color(m_core_colors[x])
 		x += 1
+
+
+#private:
+func _on_bullet_spawned(t_bullet):
+	print("bulet spawn")
+	t_bullet.get_parent().remove_child(t_bullet)
+	add_child(t_bullet)
+	pass

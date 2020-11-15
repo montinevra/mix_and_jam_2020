@@ -17,6 +17,10 @@ onready var c_shoot_timer = $ShootTimer
 onready var c_bullet_spawn = $BulletSpawn
 
 
+func _ready():
+	c_shoot_timer.wait_time = SHOOT_CD + randf()
+
+
 func _physics_process(delta):
 #	var collision
 ## warning-ignore:return_value_discarded
@@ -47,6 +51,7 @@ func _shoot():
 
 	bullet.position = c_bullet_spawn.global_position
 	get_parent().add_child(bullet)
+	Events.emit_signal("sig_bullet_spawned", bullet)
 
 
 func _on_ShootTimer_timeout():
