@@ -46,7 +46,7 @@ func _input(event):
 			selected_menu = 0
 			change_menu_color()
 			# Show popup
-			player.set_process_input(false)
+#			player.set_process_input(false)
 			popup()
 	else:
 		if Input.is_action_just_pressed("ui_down"):
@@ -58,13 +58,13 @@ func _input(event):
 			else:
 				selected_menu = 2
 			change_menu_color()
-		elif Input.is_action_just_pressed("attack"):
+		elif Input.is_action_just_pressed("fire"):
 			match selected_menu:
 				0:
 					# Resume game
 					if not already_paused:
 						get_tree().paused = false
-					player.set_process_input(true)
+#					player.set_process_input(true)
 					hide()
 				1:
 					# Restart game
