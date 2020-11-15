@@ -1,0 +1,152 @@
+
+Title:
+    Theramin Crazy
+
+Author:
+    leftshoe18
+
+URL:
+    https://opengameart.org/content/theramin-crazy
+
+License(s):
+    * CC-BY 4.0 ( https://creativecommons.org/licenses/by/4.0/legalcode )
+    * CC-BY 3.0 ( http://creativecommons.org/licenses/by/3.0/legalcode )
+
+Copyright/Attribution Notice:
+    Theramin Crazy by Anthony Mattison
+
+File(s):
+    * theramin crazy.wav
+
+----------------------------------------
+
+Title:
+    Sci-Fi Laser Fire SFX
+
+Author:
+    Triki Minut
+
+URL:
+    https://opengameart.org/content/sci-fi-laser-fire-sfx
+
+License(s):
+    * CC-BY 3.0 ( http://creativecommons.org/licenses/by/3.0/legalcode )
+    * CC-BY-SA 3.0 ( http://creativecommons.org/licenses/by-sa/3.0/legalcode )
+
+Copyright/Attribution Notice:
+    K.L.Jonasson, Winnipeg, Canada. 
+Triki Minut Interactive 
+www.trikiminut.com
+
+
+File(s):
+    * Laser-Fire-sfx_ogg.7z
+
+----------------------------------------
+
+Title:
+    bomb_explosion_8bit
+
+Author:
+    Luke.RUSTLTD
+
+URL:
+    https://opengameart.org/content/bombexplosion8bit
+
+License(s):
+    * CC0 ( http://creativecommons.org/publicdomain/zero/1.0/legalcode )
+
+File(s):
+    * 8bit_bomb_explosion.wav
+
+----------------------------------------
+
+Title:
+    Picked Coin Echo 2
+
+Author:
+    NenadSimic
+
+URL:
+    https://opengameart.org/content/picked-coin-echo-2
+
+License(s):
+    * CC-BY 3.0 ( http://creativecommons.org/licenses/by/3.0/legalcode )
+
+File(s):
+    * Picked Coin Echo 2.wav
+
+----------------------------------------
+
+Title:
+    Picked Coin Echo
+
+Author:
+    NenadSimic
+
+URL:
+    https://opengameart.org/content/picked-coin-echo
+
+License(s):
+    * CC-BY 3.0 ( http://creativecommons.org/licenses/by/3.0/legalcode )
+
+File(s):
+    * Picked Coin Echo.wav
+
+----------------------------------------
+
+Title:
+    Win Jingle
+
+Author:
+    Fupi
+
+URL:
+    https://opengameart.org/content/win-jingle
+
+License(s):
+    * CC0 ( http://creativecommons.org/publicdomain/zero/1.0/legalcode )
+
+File(s):
+    * winfretless.ogg
+    * winjingle.zip
+    * winjingle.mid
+
+----------------------------------------
+
+Title:
+    Time Slow
+
+Author:
+    MidFag
+
+URL:
+    https://opengameart.org/content/time-slow
+
+License(s):
+    * CC0 ( http://creativecommons.org/publicdomain/zero/1.0/legalcode )
+
+File(s):
+    * time_stop.mp3
+
+----------------------------------------
+
+Title:
+    "Revenge of The Enormous Badgers"
+
+Author:
+    Spring
+
+URL:
+    https://opengameart.org/content/revenge-of-the-enormous-badgers
+
+License(s):
+    * CC0 ( http://creativecommons.org/publicdomain/zero/1.0/legalcode )
+
+Copyright/Attribution Notice:
+    Spring
+
+File(s):
+    * revenge of the enourmous badgers.ogg
+
+----------------------------------------
