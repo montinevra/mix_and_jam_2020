@@ -6,6 +6,7 @@ const ENEMY_SCENE = preload("res://scenes/Enemy.tscn")
 export var enemy_count: int = 8
 var m_core_colors = [Color.red, Color.blue, Color.green, Color.yellow, Color.red, Color.blue, Color.green, Color.yellow]
 var m_last_core = null
+var m_enemy_list = []
 onready var c_player_start = $PlayerStart
 #onready var c_enemy_start = $EnemyStart
 onready var c_enemy_grid = $Path2D/EnemyGrid
@@ -13,8 +14,11 @@ onready var c_enemy_grid = $Path2D/EnemyGrid
 
 func _ready():
 	randomize()
+# warning-ignore:return_value_discarded
 	Events.connect("sig_bullet_spawned", self, "_on_bullet_spawned")
+# warning-ignore:return_value_discarded
 	Events.connect("sig_enemy_hit", self, "_on_enemy_hit")
+# warning-ignore:return_value_discarded
 	Events.connect("sig_core_exposed", self, "_on_core_exposed")
 	_start_game()
 
@@ -33,6 +37,7 @@ func _start_game():
 		new_enemy.position = i.position
 		new_enemy.set_core_color(m_core_colors[x])
 		x += 1
+		m_enemy_list.append(new_enemy)
 
 
 #private:
@@ -50,12 +55,27 @@ func _on_enemy_hit(t_enemy):
 
 
 func _on_core_exposed(t_color):
-	if !m_last_core:
-		m_last_core = t_color
-	elif m_last_core == t_color:
-#	if m_last_core and m_last_core == t_color:
-		Events.emit_signal("sig_core_matched", t_color)
-	else:
-		m_last_core = null
-		Events.emit_signal("sig_core_unmatched")
-	pass
+	var exposed_cores = 0
+	var matching_cores = 0
+	
+	for i in m_enemy_list:
+		if i and i.is_core_exposed():
+			exposed_cores += 1
+	if exposed_cores >= 2:
+		for i in m_enemy_list:
+			if i and i.is_core_exposed() and i.get_core_color() == t_color:
+				matching_cores += 1
+		if matching_cores >= 2:
+			Events.emit_signal("sig_core_matched", t_color)
+		else:
+			Events.emit_signal("sig_core_unmatched")
+#		print(matching_cores)
+#	if !m_last_core:
+#		m_last_core = t_color
+#	elif m_last_core == t_color:
+##	if m_last_core and m_last_core == t_color:
+#		Events.emit_signal("sig_core_matched", t_color)
+#	else:
+#		m_last_core = null
+#		Events.emit_signal("sig_core_unmatched")
+#	pass
