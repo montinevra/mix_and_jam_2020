@@ -102,7 +102,7 @@ func _on_core_matched(t_color):
 		var explosion = EXPLOSION_SCENE.instance()
 		get_parent().add_child(explosion)
 		explosion.set_position(get_position())
-		Events.emit_signal("sig_enemy_destroyed")
+#		Events.emit_signal("sig_enemy_destroyed")
 		queue_free()
 
 
