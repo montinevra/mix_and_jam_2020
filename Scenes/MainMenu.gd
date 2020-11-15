@@ -43,7 +43,7 @@ func _input(event):
 		match selected_menu:
 			0:
 				# How To Play
-				get_tree().change_scene("res://Scenes/HowTo.tscn")
+				get_tree().change_scene("res://Scenes/Howtoplayscreen.tscn")
 			1:
 				# Start game
 				get_tree().change_scene("res://Scenes/Main.tscn")
