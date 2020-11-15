@@ -5,5 +5,5 @@ func _ready():
 	play()
 
 
-func _on_explosion1_animation_finished():
+func _on_Explosion_animation_finished():
 	Events.emit_signal("sig_enemy_destroyed")
