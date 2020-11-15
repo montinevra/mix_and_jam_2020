@@ -1,31 +1,48 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Backgrounds/Howtoplayscreen.png" type="Texture" id=1]
 [ext_resource path="res://Fonts/HelpFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Scenes/Howtoplayscreen.gd" type="Script" id=3]
 
 [node name="Howtoplayscreen" type="Sprite"]
 texture = ExtResource( 1 )
 centered = false
+script = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 165.454
-margin_top = 8.1591
-margin_right = 478.454
-margin_bottom = 36.1591
+anchor_right = 1.0
+margin_top = 10.0
+margin_bottom = 31.0
 custom_fonts/font = ExtResource( 2 )
 text = "Those gosh darned Space Goblins are at it again!"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label2" type="Label" parent="."]
-margin_left = 39.0084
-margin_top = 303.178
-margin_right = 633.009
-margin_bottom = 372.178
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -60.0
+margin_bottom = 129.0
 custom_fonts/font = ExtResource( 2 )
-text = "It's up to you, Captain Johnny Johnstar, to thwart their evil plans! This time, their fighters come equipped with brand-new, state-of-the-art, Super Awesome Power Core (TM)(R) modules."
+text = "It's up to you, Captain Johnny Johnstar, to thwart their evil plans! This time, their fighters come equipped with brand-new, state-of-the-art, Super Awesome Power Core (TM)(R) modules. Using these, they can shield, repair and recover from your attacks - they're near invincible! Maybe if you can expose two of the same polarity, you just might be able to overpower them and let their own cores do the dirty work!"
+align = 1
 autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -29.9999
+margin_bottom = -8.99994
+custom_fonts/font = ExtResource( 2 )
+text = "Use the arrow keys to move, and the space bar to fire!"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
