@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Howtoplayscreen.png-c9451d175fa514f212211bce899ffb29.stex"
+path="res://.import/Starscreen Color.png-05ce9befc541ae3c1714220ecd74978e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Howtoplayscreen.png"
-dest_files=[ "res://.import/Howtoplayscreen.png-c9451d175fa514f212211bce899ffb29.stex" ]
+source_file="res://Backgrounds/Starscreen Color.png"
+dest_files=[ "res://.import/Starscreen Color.png-05ce9befc541ae3c1714220ecd74978e.stex" ]
 
 [params]
 

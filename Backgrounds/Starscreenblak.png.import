@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Starscreenblak.png-abecced2ea6b4b72e4a280ec7877c3f5.stex"
+path="res://.import/Starscreenblak.png-b8c1eb81ec41accd7ef004b500ab2431.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Starscreenblak.png"
-dest_files=[ "res://.import/Starscreenblak.png-abecced2ea6b4b72e4a280ec7877c3f5.stex" ]
+source_file="res://Backgrounds/Starscreenblak.png"
+dest_files=[ "res://.import/Starscreenblak.png-b8c1eb81ec41accd7ef004b500ab2431.stex" ]
 
 [params]
 
