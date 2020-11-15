@@ -1,11 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Scenes/PauseMenu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/PlayField.tscn" type="PackedScene" id=2]
 
 [node name="Main" type="Node2D"]
 
 [node name="PlayField" parent="." instance=ExtResource( 2 )]
-position = Vector2( -0.749146, 0 )
-
-[node name="PauseMenu" parent="." instance=ExtResource( 1 )]
