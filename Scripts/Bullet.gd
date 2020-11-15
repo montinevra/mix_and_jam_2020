@@ -10,6 +10,7 @@ var window_width = ProjectSettings.get_setting("display/window/size/width")
 
 func _ready():
 	m_velocity = Vector2.UP * m_speed
+	$AudioStreamPlayer.play()
 
 
 func _physics_process(delta):
