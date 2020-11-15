@@ -20,6 +20,8 @@ func _ready():
 	Events.connect("sig_enemy_hit", self, "_on_enemy_hit")
 # warning-ignore:return_value_discarded
 	Events.connect("sig_core_exposed", self, "_on_core_exposed")
+# warning-ignore:return_value_discarded
+	Events.connect("sig_enemy_destroyed", self, "_on_enemy_destroyed")
 	_start_game()
 
 
@@ -79,3 +81,10 @@ func _on_core_exposed(t_color):
 #		m_last_core = null
 #		Events.emit_signal("sig_core_unmatched")
 #	pass
+
+
+func _on_enemy_destroyed():
+	for i in m_enemy_list:
+		if i:
+			return
+	#end game
