@@ -7,6 +7,7 @@ const SPEED = 100
 const SHOOT_CD = 1
 const PLAYFIELD_EDGE = 20
 const BULLET_SCENE = preload("res://scenes/EnemyBullet.tscn")
+const EXPLOSION_SCENE = preload("res://Sprites/Animated/Explosion.tscn")
 var m_state = State.ALIVE
 var m_velocity = Vector2.RIGHT * SPEED
 var window_width = ProjectSettings.get_setting("display/window/size/width")
@@ -69,6 +70,9 @@ func _on_ShootTimer_timeout():
 
 func _on_core_matched(t_color):
 	if c_core.get_modulate() == t_color:
+		var explosion = EXPLOSION_SCENE.instance()
+		get_parent().add_child(explosion)
+		explosion.set_position(get_position())
 		queue_free()
 
 

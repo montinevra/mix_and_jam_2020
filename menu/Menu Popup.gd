@@ -1,26 +1,9 @@
 extends Popup
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
 var player
-
-
 var already_paused
 var selected_menu
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	player = get_node("/root/Root/Player")
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 
 
 func change_menu_color():
@@ -46,7 +29,6 @@ func _input(event):
 			selected_menu = 0
 			change_menu_color()
 			# Show popup
-#			player.set_process_input(false)
 			popup()
 	else:
 		if Input.is_action_just_pressed("ui_down"):
@@ -58,14 +40,13 @@ func _input(event):
 			else:
 				selected_menu = 2
 			change_menu_color()
-		elif Input.is_action_just_pressed("fire"):
+		elif Input.is_action_just_pressed("ui_cancel"):
+			_resume()
+		elif Input.is_action_just_pressed("fire") or Input.is_action_just_pressed("ui_accept"):
 			match selected_menu:
 				0:
 					# Resume game
-					if not already_paused:
-						get_tree().paused = false
-#					player.set_process_input(true)
-					hide()
+					_resume()
 				1:
 					# Restart game
 					get_tree().change_scene("res://Scenes/Main.tscn")
@@ -73,3 +54,9 @@ func _input(event):
 				2:
 					# Quit game
 					get_tree().quit()
+
+
+func _resume():
+	if not already_paused:
+		get_tree().paused = false
+		hide()
