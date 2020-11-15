@@ -24,7 +24,7 @@ margin_top = 303.178
 margin_right = 633.009
 margin_bottom = 372.178
 custom_fonts/font = ExtResource( 2 )
-text = "It's up to you, Captian Johnny Johnstar, to thwart their evil plans! This time, their fighters come equipped with brand-new, state-of-the-art, Super Awesome Power Core (TM)(R) modules."
+text = "It's up to you, Captain Johnny Johnstar, to thwart their evil plans! This time, their fighters come equipped with brand-new, state-of-the-art, Super Awesome Power Core (TM)(R) modules."
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false

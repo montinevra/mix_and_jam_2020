@@ -3,26 +3,26 @@ extends Control
 
 var player
 var already_paused
-var selected_menu = 0
-var grayout = preload("res://Shaders/white2gray.shader")
-var white = preload("res://Shaders/normal.shader")
+var selected_menu = -1
+var white = Color(1,1,1)
+var grayout = Color(.5,.5,.5)
 
 
 func change_menu_color():
-	$howto.material.shader = white
-	$start.material.shader = white
-	$credits.material.shader = white
-	$quit.material.shader = white
+	$howto.modulate = Color(white)
+	$start.modulate = Color(white)
+	$credits.modulate = Color(white)
+	$quit.modulate = Color(white)
 	
 	match selected_menu:
 		0:
-			$howto.material.shader = grayout
+			$howto.modulate = grayout
 		1:
-			$start.material.shader = grayout
+			$start.modulate = grayout
 		2:
-			$credits.material.shader = grayout
+			$credits.modulate = grayout
 		3:
-			$quit.material.shader = grayout
+			$quit.modulate = grayout
 
 func _input(event):
 	if Input.is_action_just_pressed("ui_down"):
@@ -43,7 +43,7 @@ func _input(event):
 		match selected_menu:
 			0:
 				# How To Play
-				get_tree().change_scene("res://Scenes/HowTo.tscn")
+				get_tree().change_scene("res://Scenes/Howtoplayscreen.tscn")
 			1:
 				# Start game
 				get_tree().change_scene("res://Scenes/Main.tscn")
