@@ -27,17 +27,17 @@ __meta__ = {
 }
 
 [node name="Label2" type="Label" parent="."]
-margin_left = 61.3306
-margin_top = 444.665
-margin_right = 586.331
-margin_bottom = 681.665
+margin_left = 17.4008
+margin_top = 443.74
+margin_right = 631.401
+margin_bottom = 728.74
 custom_fonts/font = ExtResource( 4 )
 text = "Main Menu Theme - \"Theramin Crazy\" by Anthony Mattison
 Battle Music - \"Revenge of The Enormous Badgers\" by Spring
 
 Sound Effects 
 -
- K.L.Jonasson, Winnipeg, Canada
+ K.L.Jonasson, Winnipeg, Canada. Triki Minut Interactive. www.trikiminut.com
 Luke.RUSTLTD
 NenadSimic
 Fupi
