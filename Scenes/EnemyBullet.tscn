@@ -1,11 +1,11 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/EnemyBullet.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/ph_bullet.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Red Bolt.png" type="Texture" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 2.0
-height = 2.0
+radius = 4.0
+height = 4.0
 
 [node name="EnemyBullet" type="KinematicBody2D"]
 collision_layer = 2
@@ -13,6 +13,7 @@ script = ExtResource( 1 )
 m_speed = -300.0
 
 [node name="Sprite" type="Sprite" parent="."]
+rotation = 3.14159
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
