@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Fonts/CreditsFont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Backgrounds/Starscreen Color.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Victory.gd" type="Script" id=3]
+[ext_resource path="res://Fonts/HelpFont.tres" type="DynamicFont" id=4]
 
 [node name="Credits" type="Node2D"]
 script = ExtResource( 3 )
@@ -12,14 +13,35 @@ texture = ExtResource( 2 )
 centered = false
 
 [node name="Label" type="Label" parent="."]
-margin_left = 59.666
-margin_top = 152.792
-margin_right = 584.666
-margin_bottom = 348.792
+margin_left = 60.0
+margin_top = 153.0
+margin_right = 585.0
+margin_bottom = 282.0
 custom_fonts/font = ExtResource( 1 )
 text = "Programming, Design - Paolo Van Erp
 Art - Brian Thompson
 UI, Programming - Travis Neal"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 61.3306
+margin_top = 444.665
+margin_right = 586.331
+margin_bottom = 681.665
+custom_fonts/font = ExtResource( 4 )
+text = "Main Menu Theme - \"Theramin Crazy\" by Anthony Mattison
+Battle Music - \"Revenge of The Enormous Badgers\" by Spring
+
+Sound Effects 
+-
+ K.L.Jonasson, Winnipeg, Canada
+Luke.RUSTLTD
+NenadSimic
+Fupi
+MidFag"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
