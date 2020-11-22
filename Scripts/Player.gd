@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 
 const SPEED = 200
-const BULLET_SCENE = preload("res://scenes/PlayerBullet.tscn")
+const BULLET_SCENE = preload("res://Scenes/PlayerBullet.tscn")
 const EXPLOSION_SCENE = preload("res://Sprites/Animated/PlayerExplosion.tscn")
 var m_velocity = Vector2(0, 0)
 var m_inputs = {
