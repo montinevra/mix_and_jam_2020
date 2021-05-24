@@ -26,7 +26,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Mix and Jam"
+config/name="Space Goblins"
 run/main_scene="res://Scenes/MainMenu.tscn"
 config/icon="res://icon.png"
 

@@ -61,11 +61,11 @@ func _on_core_exposed(t_color):
 	var matching_cores = 0
 	
 	for i in m_enemy_list:
-		if i and i.is_core_exposed():
+		if is_instance_valid(i) and i.is_core_exposed():
 			exposed_cores += 1
 	if exposed_cores >= 2:
 		for i in m_enemy_list:
-			if i and i.is_core_exposed() and i.get_core_color() == t_color:
+			if is_instance_valid(i) and i.is_core_exposed() and i.get_core_color() == t_color:
 				matching_cores += 1
 		if matching_cores >= 2:
 			Events.emit_signal("sig_core_matched", t_color)
@@ -85,6 +85,6 @@ func _on_core_exposed(t_color):
 
 func _on_enemy_destroyed():
 	for i in m_enemy_list:
-		if i:
+		if is_instance_valid(i):
 			return
 	get_tree().change_scene("res://Scenes/Victory.tscn")
