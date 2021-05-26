@@ -26,6 +26,7 @@ position = Vector2( 235.348, 742.884 )
 curve = SubResource( 1 )
 
 [node name="EnemyGrid" type="PathFollow2D" parent="Path2D"]
+position = Vector2( 1.50074, 1.23854 )
 rotate = false
 script = ExtResource( 3 )
 
