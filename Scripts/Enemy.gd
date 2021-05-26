@@ -6,7 +6,7 @@ enum State {ALIVE, CORE, UNEXPLODING}
 const DEBUG = false
 const SPEED = 100
 const SHOOT_CD = 1
-const PLAYFIELD_EDGE = 20
+#const PLAYFIELD_EDGE = 20
 const BULLET_SCENE = preload("res://Scenes/EnemyBullet.tscn")
 const EXPLOSION_SCENE = preload("res://Sprites/Animated/Explosion.tscn")
 var m_state = State.ALIVE
@@ -38,12 +38,12 @@ func _physics_process(delta):
 	var collision
 	if m_state == State.ALIVE:
 		collision = move_and_collide(m_velocity * delta)
-		if collision:
-			m_velocity *= -1
-		if position.x > window_width - PLAYFIELD_EDGE:
-			m_velocity = Vector2.LEFT * SPEED
-		elif position.x < PLAYFIELD_EDGE:
-			m_velocity = Vector2.RIGHT * SPEED
+		if collision and not (collision.collider is Bullet):
+			if position.x < collision.collider.position.x:
+				m_velocity = Vector2.LEFT * SPEED
+			elif position.x > collision.collider.position.x:
+				m_velocity = Vector2.RIGHT * SPEED
+
 
 
 #public:

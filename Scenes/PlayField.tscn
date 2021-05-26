@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/PlayField.gd" type="Script" id=1]
 [ext_resource path="res://Space Field I.png" type="Texture" id=2]
@@ -10,6 +10,12 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 1.50074, 1.23854, 0, 0, 0, 0, 112.837, 1.2543, 0, 0, 0, 0, 1.24749, 1.24081 )
 }
 
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 64, 544 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 168, 64 )
+
 [node name="PlayField" type="Node2D"]
 script = ExtResource( 1 )
 
@@ -20,7 +26,6 @@ position = Vector2( 235.348, 742.884 )
 curve = SubResource( 1 )
 
 [node name="EnemyGrid" type="PathFollow2D" parent="Path2D"]
-position = Vector2( 1.50074, 1.23854 )
 rotate = false
 script = ExtResource( 3 )
 
@@ -49,7 +54,6 @@ position = Vector2( 435.549, 52.65 )
 position = Vector2( 502.958, 146.089 )
 
 [node name="Space Field I" type="Sprite" parent="."]
-position = Vector2( 1.50074, 1.23854 )
 texture = ExtResource( 2 )
 centered = false
 
@@ -57,3 +61,49 @@ centered = false
 stream = ExtResource( 4 )
 volume_db = -10.097
 autoplay = true
+
+[node name="LeftBound" type="StaticBody2D" parent="."]
+position = Vector2( -64, 400 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftBound"]
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="LeftBound"]
+position = Vector2( 224, -464 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="LeftBound"]
+position = Vector2( 224, 464 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="RightBound" type="StaticBody2D" parent="."]
+position = Vector2( 712, 400 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightBound"]
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="RightBound"]
+position = Vector2( -216, -464 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="RightBound"]
+position = Vector2( -216, 464 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
