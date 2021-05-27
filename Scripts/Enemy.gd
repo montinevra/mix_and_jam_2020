@@ -39,11 +39,8 @@ func _physics_process(delta):
 	if m_state == State.ALIVE:
 		collision = move_and_collide(m_velocity * delta)
 		if collision and not (collision.collider is Bullet):
-			if position.x < collision.collider.position.x:
-				m_velocity = Vector2.LEFT * SPEED
-			elif position.x > collision.collider.position.x:
-				m_velocity = Vector2.RIGHT * SPEED
-
+			var gap = position.x - collision.collider.position.x
+			m_velocity = Vector2.RIGHT * (gap / abs(gap)) * SPEED
 
 
 #public:
