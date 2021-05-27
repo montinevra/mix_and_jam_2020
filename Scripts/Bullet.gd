@@ -1,5 +1,5 @@
-extends KinematicBody2D
 class_name Bullet
+extends KinematicBody2D
 
 
 export var m_speed: float

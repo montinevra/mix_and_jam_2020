@@ -8,8 +8,7 @@ var m_core_colors = [Color.red, Color.blue, Color.green, Color.yellow, Color.red
 var m_last_core = null
 var m_enemy_list = []
 onready var c_player_start = $PlayerStart
-#onready var c_enemy_start = $EnemyStart
-onready var c_enemy_grid = $Path2D/EnemyGrid
+onready var c_enemy_grid = $EnemyGrid
 
 
 func _ready():
@@ -71,16 +70,6 @@ func _on_core_exposed(t_color):
 			Events.emit_signal("sig_core_matched", t_color)
 		else:
 			Events.emit_signal("sig_core_unmatched")
-#		print(matching_cores)
-#	if !m_last_core:
-#		m_last_core = t_color
-#	elif m_last_core == t_color:
-##	if m_last_core and m_last_core == t_color:
-#		Events.emit_signal("sig_core_matched", t_color)
-#	else:
-#		m_last_core = null
-#		Events.emit_signal("sig_core_unmatched")
-#	pass
 
 
 func _on_enemy_destroyed():

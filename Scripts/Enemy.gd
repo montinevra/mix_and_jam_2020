@@ -6,12 +6,10 @@ enum State {ALIVE, CORE, UNEXPLODING}
 const DEBUG = false
 const SPEED = 100
 const SHOOT_CD = 1
-#const PLAYFIELD_EDGE = 20
 const BULLET_SCENE = preload("res://Scenes/EnemyBullet.tscn")
 const EXPLOSION_SCENE = preload("res://Sprites/Animated/Explosion.tscn")
 var m_state = State.ALIVE
 var m_velocity = Vector2.RIGHT * SPEED
-var window_width = ProjectSettings.get_setting("display/window/size/width")
 onready var c_body: Sprite = $Body
 onready var c_core: Sprite = $Core
 onready var c_collider: CollisionPolygon2D = $CollisionPolygon2D
@@ -67,9 +65,7 @@ func get_core_color():
 
 
 func is_core_exposed():
-	if m_state == State.CORE:
-		return true
-	return false
+	return m_state == State.CORE
 
 
 #private:
@@ -98,7 +94,6 @@ func _on_core_matched(t_color):
 		var explosion = EXPLOSION_SCENE.instance()
 		get_parent().add_child(explosion)
 		explosion.set_position(get_position())
-#		Events.emit_signal("sig_enemy_destroyed")
 		queue_free()
 
 

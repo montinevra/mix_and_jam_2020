@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/PlayField.gd" type="Script" id=1]
 [ext_resource path="res://Space Field I.png" type="Texture" id=2]
-[ext_resource path="res://Scripts/EnemyGrid.gd" type="Script" id=3]
 [ext_resource path="res://Sounds/revenge of the enourmous badgers.ogg" type="AudioStream" id=4]
 
 [sub_resource type="Curve2D" id=1]
@@ -25,33 +24,31 @@ position = Vector2( 235.348, 742.884 )
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource( 1 )
 
-[node name="EnemyGrid" type="PathFollow2D" parent="Path2D"]
+[node name="EnemyGrid" type="Node2D" parent="."]
 position = Vector2( 1.50074, 1.23854 )
-rotate = false
-script = ExtResource( 3 )
 
-[node name="EnemyStart2" type="Position2D" parent="Path2D/EnemyGrid"]
+[node name="EnemyStart2" type="Position2D" parent="EnemyGrid"]
 position = Vector2( 35.764, 54.6522 )
 
-[node name="EnemyStart3" type="Position2D" parent="Path2D/EnemyGrid"]
+[node name="EnemyStart3" type="Position2D" parent="EnemyGrid"]
 position = Vector2( 85.8202, 141.417 )
 
-[node name="EnemyStart4" type="Position2D" parent="Path2D/EnemyGrid"]
+[node name="EnemyStart4" type="Position2D" parent="EnemyGrid"]
 position = Vector2( 145.888, 55.3197 )
 
-[node name="EnemyStart5" type="Position2D" parent="Path2D/EnemyGrid"]
+[node name="EnemyStart5" type="Position2D" parent="EnemyGrid"]
 position = Vector2( 215.299, 142.751 )
 
-[node name="EnemyStart6" type="Position2D" parent="Path2D/EnemyGrid"]
+[node name="EnemyStart6" type="Position2D" parent="EnemyGrid"]
 position = Vector2( 284.711, 53.3175 )
 
-[node name="EnemyStart7" type="Position2D" parent="Path2D/EnemyGrid"]
+[node name="EnemyStart7" type="Position2D" parent="EnemyGrid"]
 position = Vector2( 362.8, 142.084 )
 
-[node name="EnemyStart8" type="Position2D" parent="Path2D/EnemyGrid"]
+[node name="EnemyStart8" type="Position2D" parent="EnemyGrid"]
 position = Vector2( 435.549, 52.65 )
 
-[node name="EnemyStart9" type="Position2D" parent="Path2D/EnemyGrid"]
+[node name="EnemyStart9" type="Position2D" parent="EnemyGrid"]
 position = Vector2( 502.958, 146.089 )
 
 [node name="Space Field I" type="Sprite" parent="."]

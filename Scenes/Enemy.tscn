@@ -119,6 +119,7 @@ stream = ExtResource( 6 )
 
 [node name="CoreUnexplosionSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
+
 [connection signal="animation_finished" from="CoreExplosion" to="." method="_on_CoreExplosion_animation_finished"]
 [connection signal="animation_finished" from="CoreUnexplosion" to="." method="_on_CoreUnexplosion_animation_finished"]
 [connection signal="timeout" from="ShootTimer" to="." method="_on_ShootTimer_timeout"]
