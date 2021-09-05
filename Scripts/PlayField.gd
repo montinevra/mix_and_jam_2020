@@ -39,6 +39,7 @@ func _start_game():
 		new_enemy.set_core_color(m_core_colors[x])
 		x += 1
 		m_enemy_list.append(new_enemy)
+	enemy.queue_free()
 
 
 #private:
