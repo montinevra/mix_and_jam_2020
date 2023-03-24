@@ -19,8 +19,6 @@ func _physics_process(delta):
 	collision = move_and_collide(m_velocity * delta)
 	if collision:
 		_collide(collision)
-	if position.y < -50 or position.y > window_height + 50 or position.x < -50 or position.x > window_width + 50:
-		queue_free()
 
 
 #private:

@@ -1,13 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/PlayField.gd" type="Script" id=1]
 [ext_resource path="res://Space Field I.png" type="Texture" id=2]
 [ext_resource path="res://Sounds/revenge of the enourmous badgers.ogg" type="AudioStream" id=4]
-
-[sub_resource type="Curve2D" id=1]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 1.50074, 1.23854, 0, 0, 0, 0, 112.837, 1.2543, 0, 0, 0, 0, 1.24749, 1.24081 )
-}
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 64, 544 )
@@ -20,9 +15,6 @@ script = ExtResource( 1 )
 
 [node name="PlayerStart" type="Position2D" parent="."]
 position = Vector2( 235.348, 742.884 )
-
-[node name="Path2D" type="Path2D" parent="."]
-curve = SubResource( 1 )
 
 [node name="EnemyGrid" type="Node2D" parent="."]
 position = Vector2( 1.50074, 1.23854 )
@@ -51,9 +43,24 @@ position = Vector2( 435.549, 52.65 )
 [node name="EnemyStart9" type="Position2D" parent="EnemyGrid"]
 position = Vector2( 502.958, 146.089 )
 
+[node name="EnemyStart10" type="Position2D" parent="EnemyGrid"]
+position = Vector2( 40.4993, 224.761 )
+
+[node name="EnemyStart11" type="Position2D" parent="EnemyGrid"]
+position = Vector2( 169.978, 226.095 )
+
+[node name="EnemyStart12" type="Position2D" parent="EnemyGrid"]
+position = Vector2( 317.479, 225.428 )
+
+[node name="EnemyStart13" type="Position2D" parent="EnemyGrid"]
+position = Vector2( 457.637, 229.433 )
+
 [node name="Space Field I" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 centered = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="BgMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )

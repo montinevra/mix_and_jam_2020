@@ -4,7 +4,7 @@ extends Node2D
 const PLAYER_SCENE = preload("res://Scenes/Player.tscn")
 const ENEMY_SCENE = preload("res://Scenes/Enemy.tscn")
 export var enemy_count: int = 8
-var m_core_colors = [Color.red, Color.blue, Color.green, Color.yellow, Color.red, Color.blue, Color.green, Color.yellow]
+var m_core_colors = [Color.red, Color.blue, Color.green, Color.yellow, Color.red, Color.blue, Color.green, Color.yellow, Color.violet, Color.violet, Color.orange, Color.orange]
 var m_last_core = null
 var m_enemy_list = []
 onready var c_player_start = $PlayerStart
